@@ -12,31 +12,17 @@ frosted_scrambled = frosted;
 
 frosted_scrambled(9)='E';
 
-honey_cheerios = cheerios;
+frosted_scrambled([6 13]) = ['F' 'X'];
 
-honey_cheerios(1)='O'; 
+ff=find(frosted == 'F')
 
-honey_cheerios(5)='P';
+str = 'MACARONI AND CHEESE' 
 
-chem = 'CHEMISTRY';
+vectid1= [1 2 7 9 14 15 16 17 18 19]
 
-new_chem = chem;
+str(vectid1)
 
-new_chem(1)='O';
+vectid2 = [15 16 5 9 1 8 7 12 9 8 18 9 3 15 8 7 19 18 19]
 
-new_chem(8)='B';
-
-disp(new_chem);
-
-macncheese = 'MACARONI AND CHEESE'; 
-
-new_macncheese = macncheese;
-
-new_macncheese(3)='O'; 
-
-new_macncheese(14)='O';
-
-new_macncheese(8)='R'; 
-
-disp(new_macncheese); 
+str(vectid2)
 
