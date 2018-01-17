@@ -1,1 +1,0 @@
-% Homework for Chapter 2. Due 19th of January 
