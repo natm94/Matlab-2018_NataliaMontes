@@ -27,6 +27,7 @@ min(mat);
 min(mat');
 % e) Use min twice to calculate the minimum of the entire matrix
 min(min(mat));
+% could also be min(mat(:))
 %% Q 3.2: Calculations with vectors.
 
 % Define the following vectors:
@@ -51,8 +52,7 @@ sum(v1 * v2');
 %% Q 3.5: More calculations with vectors
 
 % Calculate the sum of all odd numbers from 1 to 99
-vecOdd = 1:2:99;
-sum(vecOdd)
+sum(1:2:99);
 %% Q 3.6: Making pi
 
 % The number ? can be expressed as:
@@ -71,7 +71,7 @@ b = a.^2;
 
 % c) Create a new vector (‘c’) that is 6 divided by every element of vector b
 
-c = b./6;
+c = 6./b;
  
 % d) Create a scalar ‘d’ that is the sum of vector ‘c’
 
@@ -83,7 +83,7 @@ sqrt(d)
 
 % f) For extra credit, try to do to this all in a single line!
 
-sqrt(sum((1:10000).^2)./6)
+sqrt(sum(6./((1:10000).^2)))
 
 %% Q 3.7: Inner and Outer Products
 % 
@@ -105,13 +105,19 @@ w = [1 1 1 1 1]/5;
 % 
 % c) Show that the inner product of w and heights is the same as the mean. Do you see why?
 
-sum(w*heights);
-mean(w*heights);
+heights' * w'
+round([heights'*w'], 0) == round(mean(heights), 0)
 
 % d)  Now let 
 w = [1 1 1 0 1]/4;
 % 
 % Show that the inner product of w and heights is the mean height after taking out the fourth value.
 
+<<<<<<< Updated upstream
 sum(w(1 2 3 5)*heights); %Help! % you use square brackets to create a vector, rounded to reference into a vector.
 
+=======
+heights1=heights([1 2 3 5])'; 
+w1=w([1 2 3 5])';
+heights1 * w1 == mean(heights1)
+>>>>>>> Stashed changes
