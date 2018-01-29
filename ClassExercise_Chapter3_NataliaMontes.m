@@ -113,4 +113,5 @@ w = [1 1 1 0 1]/4;
 % 
 % Show that the inner product of w and heights is the mean height after taking out the fourth value.
 
-sum(w[1 2 3 5]*heights); %Help!
+sum(w(1 2 3 5)*heights); %Help! % you use square brackets to create a vector, rounded to reference into a vector.
+
