@@ -35,15 +35,8 @@ str(1) = 'c';
 str(14) = 'n';
 id1 = (1:17);
 
-% so actually I was a little cruel, there wasn't a e in cosey
-id1 = [14 2 3 5 6 7 8 9 10 11 12 6 1 2 2 17];
-
 % a) Create a vector called id1 so that when you type:
 disp(str(id1))
-
-% so actually I was a little cruel, there wasn't a e in cosey
-id1 = [14 2 3 5 6 7 8 9 10 11 12 6 1 2 2 17];
-
 
 % you get:         cosy little nook
 % (Hint, write the phrase "nosey little cook" on a piece of paper and number each letter)
@@ -57,7 +50,7 @@ a = 20:-2:6
 A = linspace(20, 6, 8)
 v = [1.1000 1.3268 1.5537 1.7805 2.0074 2.2342 2.4611 2.6879 2.9147 3.1416];
 % HELP on below
-b=1.1:v(2)-v(1):pi
+% b = (1.1000:0.2268:pi)
 B = linspace(1.1000, pi, 10)
 v = [20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1];
 c = 20:-1:1
@@ -115,11 +108,10 @@ resplist='ssshhhshsshhsssh';
 % THE DIRECTIONS WELL
 % c) Create strings stimlisthappy and resplisthappy that contain the 
 % values in stimulist and resplist when happy music was playing
-stimlisthappy = stimulist(happyvect);
-resplisthappy = resplist(happyvect);
+stimlisthappy = stimulist([5:8 13:16]);
+resplisthappy = resplist([5:8 13:16]);
 % d) Find out which stimulus was being presented on the 3rd happy music trial.
 stimlisthappy(3)
 % e) Find out which responses were made on the 3rd, 4th and 5th sad music trial.
-resplistsad=resplist(sadvect);
+resplistsad=resplist([1:4 9:12]);
 resplistsad([3 4 5])
-% You got it!

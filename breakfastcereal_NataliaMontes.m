@@ -70,10 +70,6 @@ disp(resp(2:2:end))
 
 %% Q2.7 ?? Confused! Output gives all errors
 
-% I'm not getting errors so I'm confused about your confusion. If you are
-% still confufe come see me?
-
-
 vect = 12:-1:1
 
 % a) Guess for vect(1:12) 
