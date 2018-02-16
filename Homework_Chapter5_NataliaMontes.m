@@ -96,6 +96,8 @@ t = 5000;
 npts = 2500;
 nptsI = 250;
 
+
+% nicely done!
 dataextract = zeros(nptsI, ntrials);
 
 for j = 1:ntrials
@@ -149,27 +151,52 @@ per(per>100)=100; per(per<0)=0;
 % and rats along the y axis using a colormap that varies between white for 
 % 100% correct and black for 0% correct (not using imagesc)
 
-plot(X, Y)
+image(per')
+colormap(gray(100))
 
 % b) change the colormap so that values above 90% are white and values below 10% are black.
 
-for x 
+cmap=gray(100);
+cmap(1:10,:)= 0;
+cmap(91:100,:)= 100;
+
+% for x 
 
 % c) how many rats performed above 66% correct between trials 6001-7001?
 
 
+perC = per;
+perC(find(binsteps>7001), :) = NaN; % each bin has 100 trials and you need to put the Nans in perC
+perC(find(binsteps<6001), :) = NaN;
+imagesc(perC)
+tmp=nanmean(perC, 1);
+nrats=length(find(tmp>66));
 
 % d) which rats were they?
 
-
+ratID(find(tmp>66))
 
 % e) How many trials would be needed for 40/50 rats to be performing above 80%.
 
 
+per80=per>80;
+numover80=sum(per80,2);
+minTover80=find(numover80>40);
+minTover80(1);
+binsteps(minTover80)
 
 % f) It turns out that for the rats with even ID numbers (2, 4, 6 10 etc.) 
 % the recording machine was on the blink for an interval between the 5678th 
 % trial and the 7533rd trial. Convert those numbers to NaN.
 
 
+badRats=find(mod(ratID,2)==0);
+per( 56:76, find(mod(ratID,2)==0))=NaN;
 
+figure(3)
+clf
+image(binsteps,size(ratID),per');
+colormap(gray(100));
+xlabel('Trial');
+ylabel('Rat');
+colorbar
