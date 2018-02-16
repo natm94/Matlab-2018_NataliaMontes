@@ -158,7 +158,8 @@ colormap(gray(100))
 
 cmap=gray(100);
 cmap(1:10,:)= 0;
-cmap(91:100,:)= 100;
+cmap(91:100,:)= 1;
+colormap(cmap)
 
 % for x 
 
