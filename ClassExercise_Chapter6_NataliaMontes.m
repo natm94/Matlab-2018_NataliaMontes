@@ -2,7 +2,7 @@
 
 %% Q 6.1 Lightness Constancy 
 
-[X, Y] = meshgrid(linspace(-1, 1, 101)); % why does only 101 work??
+[X, Y] = meshgrid(linspace(-1, 1, 101));
 X(30:40, 10:90) = 0.1; 
 X(60:70, 10:90) = 0.8; 
 

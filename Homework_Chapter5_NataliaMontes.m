@@ -13,7 +13,7 @@ for i=1:flagsize
 end
 
 figure(1)
-image(saltire+1)
+image(saltire+1) % 
 cmap=[0 0 1; 1 1 1];
 colormap(cmap)
 
@@ -85,6 +85,8 @@ clear dataextract
 clc
 ntrials=30;
 durtrial=5*1000;
+
+
 timevec=0:2:durtrial*ntrials;
 data=sin((2*pi* timevec)/(durtrial))+.1*randn(size(timevec));
 plot(timevec, data, '-')
@@ -121,7 +123,7 @@ c = find(data>0.9);
 % d) during which timepoints does the EEG response have values between 0.7 and 0.8?
 % (obviously you will get different answers each time because your data will vary each time).
 
-c = find((data <0.7) | (data >0.8));
+c = find((data <0.7) & (data >0.8));
 timevec(c);
 
 %% 5.3 HELP
@@ -138,8 +140,7 @@ ratID=sort(ratID(1:50));
 % and he calculates the % correct across each bin of 100 trials.
 
 vect = 1:50;
-ratID=vect(randperm(length(vect))); 
-ratID=sort(ratID(1:50)); 
+ratID=vect(randperm(1:70)); ratID = sort(ratID(vect)); 
 binsteps=1:100:10000;
 [X, Y]=meshgrid(1:length(ratID), 1:length(binsteps));
 per=Y+randi(10, size(Y))-5;
@@ -153,7 +154,7 @@ plot(X, Y)
 
 % b) change the colormap so that values above 90% are white and values below 10% are black.
 
-for x 
+% for x 
 
 % c) how many rats performed above 66% correct between trials 6001-7001?
 
