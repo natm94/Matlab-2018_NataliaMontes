@@ -4,8 +4,8 @@
 % vulnerability-inducing questions. Mean HR was collected pre and post. 
 
 %% Importing Dataset 
-
-[~, ~, raw] = xlsread('C:\Users\natmm\Documents\Winter 2018\Matlab Winter 2018\Project\projectdataset.xlsx','Sheet1','A2:C18');
+dirName = uigetdir;
+[~, ~, raw] = xlsread([dirName, '\projectdataset.xlsx'],'Sheet1','A2:C18');
 
 data = reshape([raw{:}],size(raw));
 
